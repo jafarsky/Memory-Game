@@ -17,7 +17,7 @@
     }
 
     .memory-card {
-        @apply self-center justify-self-center m-5 p-4 rounded-xl bg-slate-500;
+        @apply self-center justify-self-center m-5 p-4 rounded-xl bg-slate-500 cursor-pointer;
     }
 
 }
