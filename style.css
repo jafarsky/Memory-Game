@@ -13,11 +13,11 @@
     }
 
     .memory-game {
-        @apply w-11/12 lg:w-8/12 h-fit bg-slate-600/60 p-6 rounded-md grid grid-cols-4 gap-4 items-center justify-center;
+        @apply w-11/12 lg:w-8/12 h-fit bg-slate-600/60 p-6 rounded-md grid grid-cols-4 gap-6 items-center justify-center;
     }
 
     .memory-card {
-        @apply self-center justify-self-center m-5 p-4 rounded-xl bg-slate-500 cursor-pointer;
+        @apply self-center justify-self-center p-4 rounded-xl bg-slate-500 cursor-pointer;
     }
 
 }
