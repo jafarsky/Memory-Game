@@ -5,7 +5,15 @@ let lockCards = false;
 let hasShowcard = true;
 let firstCard = 0;
 let secondCard = 0;
+let score = 0;
 
+
+
+function showData()
+{
+    console.log(score);
+}
+showData();
 
 
 /****************** shuffling cards places */
@@ -57,6 +65,17 @@ function isMatch()
 } //_____________ isMatch()
 
 
+/************************* remove click() events from first & second cards */
+function removeClickEvent()
+{
+    firstCard.removeEventListener('click', clickCard);
+    secondCard.removeEventListener('click', clickCard);
+
+    score++;
+    showData();
+} //_____________ removeClickEvent()
+
+
 /********************************* hide back-face ,and show front face  */
 function hideBack_showFront()
 {
@@ -76,14 +95,6 @@ function hideBack_showFront()
 } //____________________________________________________________________ hideBack_showFront()
 
 
-/************************* remove click() events from first & second cards */
-function removeClickEvent()
-{
-    firstCard.removeEventListener('click', clickCard);
-    secondCard.removeEventListener('click', clickCard);
-} //_____________ removeClickEvent()
-
- 
 // Add class 'hidden' for all img.back-face , to be able remove class 'hidden : 👇🏻
 allBackFaces.forEach (backface => backface.classList.add('hidden'));
 
