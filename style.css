@@ -5,19 +5,23 @@
 @layer components {
     
     body {
-        @apply bg-slate-900 flex justify-center items-center;
+        @apply bg-slate-900 flex flex-col justify-center items-center;
     }
 
     img {
         @apply w-24 h-24;
     }
 
-    .memory-game {
-        @apply w-11/12 lg:w-8/12 h-fit bg-slate-600/60 p-7 rounded-3xl grid grid-cols-4 gap-6 items-center justify-center;
+    #memory-game {
+        @apply w-11/12 lg:w-8/12 h-fit bg-slate-600/60 p-7 rounded-3xl grid grid-cols-2 gap-6 items-center justify-center;
     }
 
     .memory-card {
         @apply self-center justify-self-center p-2 rounded-xl bg-slate-500 cursor-pointer select-none;
+    }
+
+    #nextLevelBtn {
+        @apply text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-base px-5 py-2.5 mt-8 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700;
     }
 
 }
