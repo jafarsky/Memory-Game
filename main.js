@@ -1,9 +1,10 @@
-let memoryGame = document.getElementById('memory-game');
+let memoryGameContainer = document.getElementById('memory-game');
 let allCards = document.querySelectorAll('.memory-card');
 let allFrontFaces = document.querySelectorAll('.front-face');
 let allBackFaces = document.querySelectorAll('.back-face');
 let nextLevelBtn = document.getElementById('nextLevelBtn');
-let numLevel = document.getElementById('numLevel');
+let allCurrentLevel = document.querySelectorAll('.currentLevel');
+let scoreInDocument = document.getElementById('score');
 
 let lockCards = false;
 let hasShowcard = true;
@@ -11,13 +12,6 @@ let firstCard = 0;
 let secondCard = 0;
 let score = 0;
 let levelsCount = 1;
-
-
-function showData()
-{
-    console.log(`score => ${score}    ---    levelsCount => ${levelsCount}`);
-}
-showData();
 
 
 const backFaceImgName1 = ['sameroom', 'nuxt-icon', 'github-octocat', 'waffle-icon', 'nightwatch', 'mailchimp-freddie', 'phalcon', 'testmunk']
@@ -90,32 +84,63 @@ function isMatch()
 } //_____________ isMatch()
 
 
+nextLevelBtn.onclick = _ => {
+
+    nextLevelBtn.classList.add('hidden');
+
+    setTimeout( _ => {
+
+        let card1 = backFaceImgName1[levelsCount - 2];
+        let card2 = backFaceImgName2[levelsCount - 2];
+
+        memoryGameContainer.innerHTML += newCards(card1) + newCards(card2);
+
+        allCurrentLevel.forEach (currentLevel => currentLevel.innerText = levelsCount);
+
+        if (levelsCount == 2) {
+            memoryGameContainer.classList.add('grid-cols-3');
+        }
+        else if (levelsCount <= 4) {
+            memoryGameContainer.classList.add('grid-cols-4');
+        }
+        else {
+            memoryGameContainer.classList.add('grid-cols-5');
+        }
+        
+        
+            
+        
+        updateVariable();
+        defaultMode();
+    }, 1111);
+}
+
+
+
 /************************* remove click() events from first & second cards */
 function removeClickEvent()
 {
     firstCard.removeEventListener('click', clickCard);
     secondCard.removeEventListener('click', clickCard);
 
+    //  If We Open All CARDS
     if (++score === (levelsCount * 2))
     {
-        levelsCount++;
+        levelsCount++;  // add 1 to level counter
 
-        let card1 = backFaceImgName1[levelsCount - 2];
-        let card2 = backFaceImgName2[levelsCount - 2];
+        allCurrentLevel[1].innerText = levelsCount;
 
-        memoryGame.innerHTML += newCards(card1) + newCards(card2);
-
-        updateVariable();
-        defaultMode();
+        nextLevelBtn.classList.remove('hidden');
     }
-    showData();
+    scoreInDocument.innerText = score;
 } //_____________ removeClickEvent()
 
 
 function defaultMode()
 {
-    score = 0;
     shuffle();
+    score = 0;
+    scoreInDocument.innerText = score;
 
     // remove class 'hidden' for all img.front-face , to make mode default 👇🏻
     allFrontFaces.forEach (frontFace => frontFace.classList.remove('hidden'));

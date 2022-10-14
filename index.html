@@ -8,7 +8,24 @@
     <title>Memory Game</title>
   </head>
   <body class="w-full h-screen">
-    <section id="memory-game">
+    
+    <div class="level" role="alert">
+      <svg width="32" height="32" viewBox="0 0 48 48"><mask id="svgIDa"><g fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="4"><path fill="#fff" d="M44 28H28v16h16V28ZM13 4l9 16H4l9-16Zm23 16a8 8 0 1 0 0-16a8 8 0 0 0 0 16Z"/><path stroke-linecap="round" d="m4 28l16 16m0-16L4 44"/></g></mask><path fill="currentColor" d="M0 0h48v48H0z" mask="url(#svgIDa)"/></svg>
+        <div class="flex pl-4 text-xl font-medium">
+          <span>Level ( <span class="currentLevel text-red-300">1</span> )</span>
+        </div>
+    </div>
+
+    <div class="score w-64" role="alert">
+      <svg width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M13 9.8v.9l-1.7.2c-2.6.4-4.5 1.4-5.9 2.7c1.7-.5 3.5-.8 5.6-.8h2v1.3l2.2-2.1L13 9.8M11 5l7 7l-7 7v-4.1c-5 0-8.5 1.6-11 5.1c1-5 4-10 11-11m6-1V5l7 7l-7 7v-3l4-4"/></svg>
+        <div class="flex pl-4 text-xl font-medium">
+          <span class="pl-4">Score : <span id="score" class="text-blue-400"></span></span>
+        </div>
+    </div>
+  
+
+
+    <section id="memory-game" class="grid-cols-2">
       <!------------------------------------ travis-->
       <div class="memory-card" data-framework="travis">
         <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
@@ -27,82 +44,10 @@
         <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
         <img class="back-face" src="https://api.iconify.design/logos:vitejs.svg" alt="vite" />
       </div>
-      <!---------------------------------- sameroom
-      <div class="memory-card" data-framework="sameroom">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:sameroom.svg" alt="sameroom" />
-      </div>
-      <div class="memory-card" data-framework="sameroom">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:sameroom.svg" alt="sameroom" />
-      </div> -->
-      <!----------------------------------- nuxt
-      <div class="memory-card" data-framework="nuxt">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:nuxt-icon.svg" alt="nuxt" />
-      </div>
-      <div class="memory-card" data-framework="nuxt">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:nuxt-icon.svg" alt="nuxt" />
-      </div>-->
-      <!--------------------------------- github
-      <div class="memory-card" data-framework="github">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:github-octocat.svg" alt="github" />
-      </div>
-      <div class="memory-card" data-framework="github">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:github-octocat.svg" alt="github" />
-      </div> -->
-      <!--------------------------------- waffle
-      <div class="memory-card" data-framework="waffle">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:waffle-icon.svg" alt="waffle" />
-      </div>
-      <div class="memory-card" data-framework="waffle">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:waffle-icon.svg" alt="waffle" />
-      </div> -->
-      <!------------------------------- nightwatch
-      <div class="memory-card" data-framework="nightwatch">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:nightwatch.svg" alt="nightwatch" />
-      </div>
-      <div class="memory-card" data-framework="nightwatch">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:nightwatch.svg" alt="nightwatch" />
-      </div> -->
-      <!------------------------------- mailchimp-freddie
-      <div class="memory-card" data-framework="mailchimp-freddie">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:mailchimp-freddie.svg" alt="mailchimp-freddie" />
-      </div>
-      <div class="memory-card" data-framework="mailchimp-freddie">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:mailchimp-freddie.svg" alt="mailchimp-freddie" />
-      </div> -->
-      <!------------------------------- phalcon
-      <div class="memory-card" data-framework="phalcon">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:phalcon.svg" alt="phalcon" />
-      </div>
-      <div class="memory-card" data-framework="phalcon">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:phalcon.svg" alt="phalcon" />
-      </div> -->
-      <!------------------------------- testmunk
-      <div class="memory-card" data-framework="testmunk">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:testmunk.svg" alt="testmunk" />
-      </div>
-      <div class="memory-card" data-framework="testmunk">
-        <img class="front-face" src="https://api.iconify.design/logos:sinatra.svg" alt="sinatra" />
-        <img class="back-face" src="https://api.iconify.design/logos:testmunk.svg" alt="testmunk" />
-      </div> -->
     </section>
 
-    <button id="nextLevelBtn" type="button" class="">
-      To Level <span id="numLevel"></span>
+    <button id="nextLevelBtn" class="hidden">
+        To Level <span class="currentLevel"></span>
     </button>
 
     <script type="module" src="/main.js"></script>
